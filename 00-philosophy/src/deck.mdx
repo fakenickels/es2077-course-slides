@@ -1,0 +1,289 @@
+import { Image, Head, Notes, Appear, Steps} from 'mdx-deck'
+import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
+import QRCode from 'qrcode.react'
+
+import { Title } from './juice/Title'
+import Paragraph from './juice/Paragraph.bs'
+import SplitLayout from './juice/SplitLayout.bs'
+import ImageFit from './juice/Image.bs'
+import GlitchImage from './juice/GlitchImage.bs'
+import VideoBackground from './juice/VideoBackground.bs'
+import CodeView from './juice/CodeSurfer.bs'
+import { CodeSurfer, CodeSurferColumns, Step } from "code-surfer"
+import { nightOwl, vsDark } from "@code-surfer/themes"
+
+
+import glitchFacesVideo from './images/glitched-faces.mp4'
+
+import glitchUnsettlingImage from './images/glitch-unsettling.jpg'
+import glitchContrastImage from './images/glitch-contrast.png'
+import glitchUnbreakableImage from './images/unbreakable.jpg'
+import glitchPerspectiveImage from './images/perspective.jpg'
+import glitchBust from './images/glitch-bust.jpeg'
+import astrocodersImage from './images/astrocoders.png'
+
+import fnmImage from './images/fnm.svg'
+import reveryImage from './images/revery.png'
+
+import variantSnippet from '!raw-loader!./snippets/VariantDemo.re' 
+import variantTypesTsSnippet from '!raw-loader!./snippets/VariantDemoTypes.ts' 
+import variantSwitchTsSnippet from '!raw-loader!./snippets/VariantDemoSwitch.ts' 
+
+import patternMatchingDemoTS from '!raw-loader!./snippets/PatternMatchingDemo.ts' 
+import patternMatchingDemoTS2 from '!raw-loader!./snippets/PatternMatchingDemo2.ts' 
+import patternMatchingDemoTS3 from '!raw-loader!./snippets/PatternMatchingDemo3.ts' 
+import patternMatchingDemoReason from '!raw-loader!./snippets/PatternMatchingDemo.re' 
+import patternMatchingDemoReasonError from '!raw-loader!./snippets/PatternMatchingDemoError.re' 
+import graphQLDemo from '!raw-loader!./snippets/GraphQLDemo.graphql' 
+import graphQLDemoReason from '!raw-loader!./snippets/GraphQLDemo.re'
+
+import reasonmlToolchain from './images/reasonml-architechture.svg'
+import stinks from './images/stinks.jpg'
+import stonks from './images/stonks.jpg'
+
+export const themes = [
+  highlight
+]
+
+<Head>
+  <title>Unbreakable apps with ECMAScript 2077</title>
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='twitter:site' content='@fakenickels' />
+  <meta name='twitter:title' content='ReasonML, ES2077' />
+  <meta name='twitter:description' content='Unbreakable apps with ECMAScript 2077' />
+</Head>
+
+## Incoming from the future
+
+---
+
+<Title glitchText1="ES2077" variant="featured">
+  ReasonML
+</Title>
+
+---
+<SplitLayout>
+  <GlitchImage src={glitchBust} />
+
+  <div style={{textAlign: 'center'}}>
+    <h2>Gabriel R. Abreu</h2>
+    <p>Astrocoders</p>
+    <p>CTO Fundador</p>
+    <p>Criador do Epitath (hooks prior art)</p>
+    <p>e ReForm</p>
+    <p>Mantedor do ReasonApolloHooks</p>
+  </div>
+</SplitLayout>
+
+--- 
+<Title variant="featured">
+  @fakenickels
+</Title>
+
+Twitter, GitHub, Reddit
+
+---
+
+# O que é ReasonML?
+
+<Steps>
+
+- Mais Uma Ferramenta Foda Criada pelo Facebook ™️
+- Mesmo criador do React, Jordan Walke
+- Um dialeto de OCaml
+- OCaml é uma linguagem funcional, super rápida, com inferência de tipos e altamente hackeável
+- ML Family, sistema de tipos Hindley-Milner
+  
+</Steps>
+
+---
+
+<SplitLayout>
+
+  <ImageFit src={stinks} />
+
+  # Put types in JS
+
+</SplitLayout>
+
+---
+
+<SplitLayout>
+  <ImageFit src={stonks} />
+
+  # Put JS in types
+
+</SplitLayout>
+
+---
+
+<SplitLayout>
+
+  <Image src={glitchUnbreakableImage} />
+
+  <h1 style={{textAlign: 'center'}}>Inquebrável?</h1>
+  
+</SplitLayout>
+
+---
+
+# Vamos falar de filosofia
+
+<div style={{textAlign: 'center'}}>
+
+<Steps>
+
+### "Um problema é composto de muitas possibilidades/ramos. Quando não tratamos todas essas possibilidades temos a maioria do que chamamos de bugs."
+
+### "Um sistema de tipos não elimina os bugs magicamente, mas ele aponta para as possibilidades não tratadas e pede para vocês cobri-las"
+
+</Steps>
+
+</div>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```reason
+type schoolPerson = Teacher | Director | Student(string);
+
+let greeting = person =>
+  switch (person) {
+  | Teacher => "Hey Professor!"
+  | Director => "Hello Director."
+  | Student("Richard") => "Still here Ricky?"
+  | Student(anyOtherName) => "Hey, " ++ anyOtherName ++ "."
+  };
+```
+
+```diff 1 subtitle="Ramos/possibilidades"
+
+```
+
+```diff 4:9 subtitle="Uso de um valor do tipo requer o tratamento de cada uma"
+
+```
+
+</CodeSurfer>
+
+---
+
+<SplitLayout>
+  <GlitchImage src={glitchPerspectiveImage} />
+
+  <h1 style={{textAlign: 'center'}}>Como estudar Reason?</h1>
+</SplitLayout>
+
+---
+
+# Como estudar Reason
+
+<Steps>
+
+- Deixe suas preposições na porta antes de entrar!
+- Records parecem com objetos em JS mas eles são muito mais restritos
+- Tudo é uma expressão
+  - Statement são instruções imperativas
+  - Expressão é tudo que é evaluável/gera valor
+- Argumentos opcionais nomeados podem te confundir um pouco
+- Diferença entre int e float
+- Strings não são utf-16 como JavaScript
+  - "Strings normais"
+  - {j|Strings com ácêntôs 😬|j}
+
+</Steps>
+
+---
+
+# Deixe suas preposições na porta antes de entrar!
+
+---
+
+# Tudo é uma expressão
+
+---
+
+<CodeSurferColumns themes={[nightOwl, vsDark]}>
+
+<Step>
+
+```reason
+[@react.component]
+let make = (~age) => {
+  <div>
+    {
+      let isMinor = age < 18
+
+      if (isMinor)
+        React.string("Vaza!")
+      else
+        React.string("Oi!") 
+    }
+  </div>
+}
+```
+
+```js
+const Welcome = ({ age }) => {
+  <div>
+    {
+      (() => {
+        const isMinor = age < 18
+        
+        if(isMinor) return "Vaza"
+        else return "Oi!"
+      })()
+    }
+  </div>
+}
+```
+
+</Step>
+
+<Step title="Em JavaScript expressões assim não são idiomáticas e a forma mais fácil de fazer é com uma IIFE">
+
+```diff 4:10
+
+```
+
+```diff 4:9
+
+```
+
+</Step>
+
+<Step title="Como o if é uma expressão ela estaria incompleta sem o else para que o tipo seja satisfeito">
+
+```diff 9:10
+
+```
+
+```diff 8:8
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+# Um auxiliar que nunca se cansa
+
+<div style={{textAlign: 'center'}}>
+  <Paragraph>
+    Jamais encare o sistema de tipos do Reason como um linter poderoso apenas.
+    Você realmente modela seu programa ao redor dele de baixo pra cima.
+  </Paragraph>
+</div>
+
+---
+
+<SplitLayout>
+
+  <VideoBackground src={glitchFacesVideo} />
+
+  <h1 style={{textAlign: 'center'}}>Obrigado!</h1>
+
+</SplitLayout>

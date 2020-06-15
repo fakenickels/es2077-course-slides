@@ -1,0 +1,122 @@
+import { Image, Head, Notes, Appear, Steps} from 'mdx-deck'
+import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
+import QRCode from 'qrcode.react'
+
+import { Title } from './juice/Title'
+import Paragraph from './juice/Paragraph.bs'
+import SplitLayout from './juice/SplitLayout.bs'
+import ImageFit from './juice/Image.bs'
+import GlitchImage from './juice/GlitchImage.bs'
+import VideoBackground from './juice/VideoBackground.bs'
+import CodeView from './juice/CodeSurfer.bs'
+import { CodeSurfer, CodeSurferColumns, Step } from "code-surfer"
+import { nightOwl, vsDark } from "@code-surfer/themes"
+
+
+import glitchFacesVideo from './images/glitched-faces.mp4'
+
+import glitchUnsettlingImage from './images/glitch-unsettling.jpg'
+import glitchContrastImage from './images/glitch-contrast.png'
+import glitchUnbreakableImage from './images/unbreakable.jpg'
+import glitchPerspectiveImage from './images/perspective.jpg'
+import glitchBust from './images/glitch-bust.jpeg'
+import astrocodersImage from './images/astrocoders.png'
+
+export const themes = [
+  highlight
+]
+
+<Head>
+  <title>Unbreakable apps with ECMAScript 2077</title>
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='twitter:site' content='@fakenickels' />
+  <meta name='twitter:title' content='ReasonML, ES2077' />
+  <meta name='twitter:description' content='Unbreakable apps with ECMAScript 2077' />
+</Head>
+
+## Incoming from the future
+
+---
+
+<Title glitchText1="ES2077" variant="featured">
+  ReasonML
+</Title>
+
+---
+
+<SplitLayout>
+
+  <Image src={glitchUnbreakableImage} />
+
+  <h1 style={{textAlign: 'center'}}>Promises te tapearam</h1>
+  
+</SplitLayout>
+
+---
+
+<CodeSurfer>
+
+```js subtitle="callback hell"
+createConnection((err, db) => {
+  getTables(db, (tablesErr, tables) => {
+    doCrunch(tables, (crunchErr, crunch) => {
+      // god help me
+    })
+  })
+})
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```javascript subtitle="promise hell"
+createConnection()
+  .then(db => {
+    return getTables(db)
+  })
+  .then(tables => {
+    return doCrunch(table)
+  })
+  .catch(err => {
+    // error handling?
+  })
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```javascript subtitle="promise hell"
+const co = require('co')
+
+co(function*() {
+  try {
+    const db = yield createConnection()
+    const tables = yield getTables(db)
+    const crunch = yield doCrunch(tables)
+  } catch(err) {
+    // error handling neh
+  }
+})
+
+```
+
+</CodeSurfer>
+
+---
+
+# Promise se paracem com monads de forma acidental
+
+---
+
+# Promises em Reason de forma monádica
+
+---
+
+<CodeSurfer>
+</CodeSurfer>
