@@ -1,0 +1,32 @@
+{
+  "name": "es2077-reactconf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck src/deck.mdx",
+    "bs:build": "bsb -make-world",
+    "build": "yarn bs:build && mdx-deck build src/deck.mdx",
+    "deck:publish": "yarn build && gh-pages -d public",
+    "watch": "bsb -make-world -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mdx-deck": "^4.1.1"
+  },
+  "dependencies": {
+    "@code-surfer/themes": "^3.1.1",
+    "aug-attr-spliced": "^0.2.0",
+    "bs-css": "^12.2.0",
+    "bs-css-emotion": "^1.2.0",
+    "bs-platform": "^7.3.2",
+    "code-surfer": "^3.1.1",
+    "gh-pages": "^3.0.0",
+    "mdx-code": "^2.0.0",
+    "prism-react-renderer": "^1.1.1",
+    "qrcode.react": "^1.0.0",
+    "reason-react": "^0.8.0",
+    "styled-components": "^5.1.1"
+  }
+}
