@@ -1,0 +1,44 @@
+{
+  "name": "conceitos-da-linguagem",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "bs-fetch": "^0.6.1",
+    "bs-platform": "^8.0.2",
+    "bs-reform": "^9.8.0",
+    "decco": "^1.2.1",
+    "fastify": "^3.0.0",
+    "fastify-cors": "^4.0.0",
+    "lenses-ppx": "^5.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "reason-promise": "^1.1.1",
+    "reason-react": "^0.9.1",
+    "reason-react-update": "^2.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

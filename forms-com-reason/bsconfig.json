@@ -1,0 +1,30 @@
+{
+  "name": "forms-com-reason",
+  "version": "0.1.0",
+  "sources": {
+    "dir" : "src",
+    "subdirs" : true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "reason-react",
+    "bs-reform",
+    "decco",
+    "reschema",
+    "reason-promise",
+    "bs-fetch",
+    "reason-react-update"
+  ],
+  "warnings": {
+    "error" : "+101"
+  },
+  "reason": {
+    "react-jsx": 3
+  },
+  "ppx-flags": ["lenses-ppx/ppx", "decco/ppx"],
+  "refmt": 3
+}
