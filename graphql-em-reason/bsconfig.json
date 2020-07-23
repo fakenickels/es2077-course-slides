@@ -15,13 +15,15 @@
     }
   ],
   "suffix": ".bs.js",
-  "ppx-flags": ["reason-relay/ppx"],
+  "ppx-flags": ["reason-relay/ppx", "@baransu/graphql_ppx_re/ppx"],
   "namespace": true,
   "bs-dependencies": [
     "reason-react",
     "reason-relay",
     "bs-fetch",
-    "reason-promise"
+    "reason-promise",
+    "reason-apollo",
+    "reason-apollo-hooks"
   ],
   "refmt": 3
 }

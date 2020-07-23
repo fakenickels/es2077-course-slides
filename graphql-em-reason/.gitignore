@@ -25,3 +25,4 @@ lib
 .merlin
 .bsb.lock
 yarn-error.log
+.graphql_ppx_cache

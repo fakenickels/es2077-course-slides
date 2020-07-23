@@ -22,7 +22,9 @@ graphql-server:
 
 update-schema:
 	rm -rf schema.graphql
+	rm -rf graphql_schema.json
 	# Baixa o introspection schema em forma de schema.graphql
 	npx get-graphql-schema $(GRAPHQL_SERVER) > schema.graphql 
+	npx get-graphql-schema $(GRAPHQL_SERVER) -j > graphql_schema.json 
 
 .PHONY: serve update-schema relay-watch graphql-server bs-watch
