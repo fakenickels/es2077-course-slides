@@ -1,0 +1,21 @@
+{
+  "name": "es77-awesome-lib",
+  "namespace": true,
+  "version": "0.1.0",
+  "sources": {
+    "dir" : "src",
+    "subdirs" : true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "reason-promise"
+  ],
+  "warnings": {
+    "error" : "+101"
+  },
+  "refmt": 3
+}

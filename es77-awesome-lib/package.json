@@ -1,0 +1,10 @@
+{
+  "name": "es77-awesome-lib",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bs-platform": "^8.0.3",
+    "reason-promise": "^1.1.1"
+  }
+}
