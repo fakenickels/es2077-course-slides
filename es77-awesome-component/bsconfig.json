@@ -1,0 +1,23 @@
+{
+  "name": "es77-awesome-component",
+  "version": "0.1.0",
+  "sources": {
+    "dir" : "src",
+    "subdirs" : true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "reason-react"
+  ],
+  "reason": {
+    "react-jsx": 3
+  },
+  "warnings": {
+    "error" : "+101"
+  },
+  "refmt": 3
+}
