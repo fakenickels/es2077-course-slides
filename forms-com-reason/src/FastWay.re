@@ -1,12 +1,14 @@
+open BsReform;
+
 module StateLenses = [%lenses
   type state = {
     name: string,
-    surname: string,
     age: int,
     acceptedTerms: bool,
   }
 ];
 
+module SignUpForm = ReForm.Make(StateLenses);
 module SignUpFastForm = FastForm.Make(StateLenses);
 
 [@react.component]
@@ -17,26 +19,16 @@ let make = () => {
     );
 
   let schema =
-    SignUpFastForm.Validation.(
+    SignUpForm.Validation.(
       Schema(
         nonEmpty(
-          ~error="Nome tem que estar preenchido",
           ~meta=
             FastForm.{
-              placeholder: "Maria",
-              label: "Primeiro nome",
+              placeholder: "Maria da Silva",
+              label: "Nome",
               kind: Normal,
             },
           Name,
-        )
-        + nonEmpty(
-          ~meta=
-            FastForm.{
-              placeholder: "da Silva",
-              label: "Sobrenome",
-              kind: Normal,
-            },
-          Surname,
         )
         + int(
             ~min=16,
@@ -80,7 +72,7 @@ let make = () => {
 
   <div>
     <SignUpFastForm
-      initialState=StateLenses.{name: "", age: 0, surname: "", acceptedTerms: false}
+      initialState=StateLenses.{name: "", age: 0, acceptedTerms: false}
       schema
       onSubmit
     />

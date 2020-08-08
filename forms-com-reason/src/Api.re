@@ -1,8 +1,3 @@
-type requestError =
-  | DeccoError(Decco.decodeError)
-  | ResponseError(Js.Promise.error)
-  | ManualError(string);
-
 let toJsonResult = promise => {
   promise
   ->Js.Promise.then_(Fetch.Response.json, _)
@@ -12,14 +7,14 @@ let toJsonResult = promise => {
 
 let combineRequestOrDeccoError = (promise, decoder) => {
   promise
-  ->Promise.mapError(error => ResponseError(error))
+  ->Promise.mapError(error => `ResponseError(error))
   ->Promise.flatMapOk(json =>
       json
       ->decoder
       ->(
           fun
           | Ok(ok) => Ok(ok)
-          | Error(error) => Error(DeccoError(error))
+          | Error(error) => Error(`DeccoError(error))
         )
       ->Promise.resolved
     );
@@ -46,7 +41,7 @@ module Person = {
     let headers = HeadersInit.make({"Content-Type": "application/json"});
 
     fetchWithInit(
-      "http://localhost:3000/",
+      "http://localhost:3001/",
       RequestInit.make(~method_=Post, ~body, ~headers, ()),
     )
     ->toJsonResult

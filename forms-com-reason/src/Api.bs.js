@@ -19,8 +19,8 @@ function toJsonResult(promise) {
 function combineRequestOrDeccoError(promise, decoder) {
   return $$Promise.flatMapOk($$Promise.mapError(promise, (function (error) {
                     return {
-                            TAG: /* ResponseError */1,
-                            _0: error
+                            NAME: "ResponseError",
+                            VAL: error
                           };
                   })), (function (json) {
                 var ok = Curry._1(decoder, json);
@@ -28,8 +28,8 @@ function combineRequestOrDeccoError(promise, decoder) {
                 tmp = ok.TAG ? ({
                       TAG: /* Error */1,
                       _0: {
-                        TAG: /* DeccoError */0,
-                        _0: ok._0
+                        NAME: "DeccoError",
+                        VAL: ok._0
                       }
                     }) : ({
                       TAG: /* Ok */0,
@@ -188,7 +188,7 @@ function request(payload) {
   var headers = {
     "Content-Type": "application/json"
   };
-  return combineRequestOrDeccoError(toJsonResult(fetch("http://localhost:3000/", Fetch.RequestInit.make(/* Post */2, Caml_option.some(headers), Caml_option.some(body), undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)(undefined))), response_decode);
+  return combineRequestOrDeccoError(toJsonResult(fetch("http://localhost:3001/", Fetch.RequestInit.make(/* Post */2, Caml_option.some(headers), Caml_option.some(body), undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)(undefined))), response_decode);
 }
 
 var Person = {
