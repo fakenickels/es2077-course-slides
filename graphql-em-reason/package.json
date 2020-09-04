@@ -8,7 +8,7 @@
     "bs-fetch": "^0.6.1",
     "bs-platform": "^7.0.3",
     "graphql": "^15.3.0",
-    "react": "0.0.0-experimental-d28bd2994",
+    "react": "0.14.0",
     "react-dom": "0.0.0-experimental-d28bd2994",
     "react-relay": "0.0.0-experimental-8cc94ddc",
     "reason-apollo": "^0.20.0",
@@ -28,7 +28,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "resolutions": {
-    "react": "0.0.0-experimental-d28bd2994",
+    "react": "0.14.0",
     "react-dom": "0.0.0-experimental-d28bd2994"
   }
 }
